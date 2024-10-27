@@ -1,0 +1,8 @@
+/node_modules
+storage/logs
+/src/public/barcodes/
+/src/public/barcodes/*
+src/public/barcodes/
+src/public/barcodes/*
+/.env
+.env
