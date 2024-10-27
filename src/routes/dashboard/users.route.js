@@ -28,6 +28,8 @@ router.post("/users/add", isAuth, isSuperUser, validator.validateUser, usersCont
 router.get("/users/edit/:userId", isAuth, isSuperUser, usersController.getEditUser);
 // post edit user to db
 router.post("/users/edit/:userId", isAuth, isSuperUser, usersController.putEditUser);
+// post delete user
+router.get("/users/delete/:userId", isAuth, isSuperUser, usersController.getDeleteUser);
 
 
 

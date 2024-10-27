@@ -27,6 +27,14 @@
 
                 <div id="content">
                     <div class="grid_container">
+                       
+                        <%if (successMessage) { %>
+                            <blockquote class="quote_green">
+                                <p>
+                                    <%- successMessage %>
+                                </p>
+                            </blockquote>
+                            <% } %>
 
                         <div class="grid_12">
                             <div class="widget_wrap">
@@ -104,7 +112,7 @@
                                                         <span>
                                                             <a href="users/edit/<%= item.userId %>" class="action-icons c-edit" href="#"
                                                                 title="Edit">Edit</a></span><span>
-                                                            <a href="" class="action-icons c-delete" href="#"
+                                                            <a href="users/delete/<%= item.userId %>" class="action-icons c-delete" href="#"
                                                                 title="Delete" onclick="confirmDeletion(this)">Delete</a></span><span>
                                                             <a class="action-icons c-suspend" href="#"
                                                                 title="Suspend">Suspend</a>
