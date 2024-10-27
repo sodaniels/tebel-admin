@@ -13,7 +13,7 @@
 				<div class="page_title">
 					<span class="title_icon"><span class="computer_imac"></span></span>
 					<h3>Dashboard</h3>
-					<div class="top_search">
+					<!-- <div class="top_search">
 						<form action="#" method="post">
 							<ul id="search_box">
 								<li>
@@ -25,7 +25,7 @@
 								</li>
 							</ul>
 						</form>
-					</div>
+					</div> -->
 				</div>
 
 				<div class="switch_bar">
@@ -33,7 +33,7 @@
 				</div>
 				<div id="content">
 					<div class="grid_container">
-						<div class="grid_12 full_block">
+						<!-- <div class="grid_12 full_block">
 							<div class="widget_wrap">
 								<div class="widget_content">
 									<div class="data_widget black_g chart_wrap">
@@ -42,7 +42,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<span class="clear"></span>
 						<div class="social_activities">
 							<div class="activities_s">
@@ -219,7 +219,7 @@
 								</div>
 							</div>
 						</div> -->
-						<span class="clear"></span>
+						<!-- <span class="clear"></span>
 						<div class="grid_12">
 							<div class="widget_wrap">
 								<div class="widget_top">
@@ -605,10 +605,277 @@
 									</table>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<span class="clear"></span>
-						<div class="grid_6">
-							<div class="widget_wrap">
+						<div class="grid_12">
+							<div class="widget_content">
+
+                                <div id="subscriber">
+                                    <div class="grid_12">
+                                        <div class="widget_wrap">
+                                            <div class="widget_top">
+                                                <span class="h_icon blocks_images"></span>
+                                                <h6>Onboarded Subscribers</h6>
+                                            </div>
+                                            <div class="widget_content">
+
+                                                <table class="display data_tbl">
+                                                    <thead>
+                                                        <tr>
+                                                            
+                                                            <th>
+                                                                First Name
+                                                            </th>
+                                                            <th>
+                                                                Middle Name
+                                                            </th>
+                                                            <th>
+                                                                Last Name
+                                                            </th>
+                                                            <th>
+                                                                Email
+                                                            </th>
+                                                            <th>
+                                                                Phone Number
+                                                            </th>
+                                                            <th>
+                                                                City
+                                                            </th>
+                                                            <th>
+                                                                Region
+                                                            </th>
+                                                            <th>
+                                                                Type
+                                                            </th>
+                                                            <th>
+                                                                Status
+                                                            </th>
+                                                            <th>
+                                                                Date
+                                                            </th>
+                                                            <th>
+                                                                Action
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <% onboardedUsers.forEach((item, index)=> { %>
+                                                            <% if(item.role==='Subscriber' ){ %>
+                                                                <tr>
+                                                                   
+                                                                    <td>
+                                                                        <%= item.firstName %>
+                                                                    </td>
+                                                                    <td>
+                                                                        <%= item.middleName %>
+                                                                    </td>
+                                                                    <td>
+                                                                        <%= item.lastName %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= item.email %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= item.phoneNumber %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= item.city %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= item.region %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= item.role %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <span
+                                                                            class="badge_style <%= item.status === 'Active' ? 'b_done' : 'b_suspend' %>"
+                                                                            style="padding-bottom: 1em;">
+                                                                            <%= item.status==='Active' ? 'Active'
+                                                                                : 'Inactive' %>
+                                                                        </span>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= shortData(item.createdAt) %>
+                                                                    </td>
+                                                                    <td class="center">
+
+                                                                        <span>
+                                                                            <a class="action-icons c-approve"
+                                                                                href="../onboarding/user/<%= item._id %>"
+                                                                                original-title="View">View</a>
+
+                                                                            <a href="../onboarding/user/edit/<%= item._id %>"
+                                                                                class="action-icons c-edit" href="#"
+                                                                                title="Edit">Edit</a></span><span>
+                                                                            <a href="" class="action-icons c-delete"
+                                                                                href="#" title="Delete"
+                                                                                onclick="confirmDeletion(this)">Delete</a></span><span>
+                                                                         
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                                <%} %>
+                                                                    <% }) %>
+                                                    </tbody>
+                                                    
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="business" style="display: none;">
+                                    <div class="grid_12">
+                                        <div class="widget_wrap">
+                                            <div class="widget_top">
+                                                <span class="h_icon blocks_images"></span>
+                                                <h6>Onboarded Businesses</h6>
+                                            </div>
+                                            <div class="widget_content">
+
+                                                <table class="display data_tbl">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+
+                                                            </th>
+                                                            <th>
+                                                                Business Name
+                                                            </th>
+                                                            <th>
+                                                                Contact 1 Fullname
+                                                            </th>
+                                                            <th>
+                                                                Contact 1 Number
+                                                            </th>
+                                                            <th>
+                                                                Email
+                                                            </th>
+                                                            <th>
+                                                                Phone Number
+                                                            </th>
+                                                            <th>
+                                                                City
+                                                            </th>
+                                                            <th>
+                                                                Region
+                                                            </th>
+                                                            <th>
+                                                                Status
+                                                            </th>
+                                                            <th>
+                                                                Date
+                                                            </th>
+                                                            <th>
+                                                                Action
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <% onboardedUsers.forEach((item, index)=> { %>
+                                                            <% if(item.role==='Business' ){ %>
+                                                                <tr>
+                                                                    <td>
+                                                                        <p>
+                                                                            <%= index + 1 %>
+                                                                        </p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <%= item.businessName %>
+                                                                    </td>
+                                                                    <td>
+                                                                        <%= item.c1_fullname %>
+                                                                    </td>
+                                                                    <td>
+                                                                        <%= item.c1_phoneNumber %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= item.email %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= item.phoneNumber %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= item.city %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= item.region %>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <span
+                                                                            class="badge_style <%= item.status === 'Active' ? 'b_done' : 'b_suspend' %>"
+                                                                            style="padding-bottom: 1em;">
+                                                                            <%= item.status==='Active' ? 'Active'
+                                                                                : 'Inactive' %>
+                                                                        </span>
+                                                                    </td>
+                                                                    <td class="center">
+                                                                        <%= shortData(item.createdAt) %>
+                                                                    </td>
+                                                                    <td class="center">
+
+                                                                        <span>
+                                                                            <a class="action-icons c-approve"
+                                                                                href="../onboarding/user/<%= item.userId %>"
+                                                                                original-title="View">View</a>
+
+                                                                            <a href="../onboarding/user/edit/<%= item.userId %>"
+                                                                                class="action-icons c-edit" href="#"
+                                                                                title="Edit">Edit</a></span><span>
+                                                                            <a href="" class="action-icons c-delete"
+                                                                                href="#" title="Delete"
+                                                                                onclick="confirmDeletion(this)">Delete</a></span><span>
+                                                                        
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                                <%} %>
+                                                                    <% }) %>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>
+
+                                                            </th>
+                                                            <th>
+                                                                Business Name
+                                                            </th>
+                                                            <th>
+                                                                Contact 1 Fullname
+                                                            </th>
+                                                            <th>
+                                                                Contact 1 Number
+                                                            </th>
+                                                            <th>
+                                                                Email
+                                                            </th>
+                                                            <th>
+                                                                Phone Number
+                                                            </th>
+                                                            <th>
+                                                                City
+                                                            </th>
+                                                            <th>
+                                                                Region
+                                                            </th>
+                                                            <th>
+                                                                Status
+                                                            </th>
+                                                            <th>
+                                                                Date
+                                                            </th>
+                                                            <th>
+                                                                Action
+                                                            </th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+							<!-- <div class="widget_wrap">
 								<div class="widget_top">
 									<span class="h_icon shopping_cart_3"></span>
 									<h6>Recent Order</h6>
@@ -677,9 +944,9 @@
 										</tbody>
 									</table>
 								</div>
-							</div>
+							</div> -->
 						</div>
-						<div class="grid_6">
+						<!-- <div class="grid_6">
 							<div class="widget_wrap tabby">
 								<div class="widget_top">
 									<span class="h_icon bended_arrow_right"></span>
@@ -819,7 +1086,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<span class="clear"></span>
 					</div>
 					<span class="clear"></span>
