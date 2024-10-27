@@ -43,6 +43,22 @@
 
                                 <div id="subscriber" style="display: none;">
                                     <div class="grid_12">
+
+                                        <%if (errorMessage) { %>
+                                            <blockquote class="quote_orange">
+                                                <p>
+                                                    <%- errorMessage %>
+                                                </p>
+                                            </blockquote>
+                                            <% } %>
+
+                                        <%if (successMessage) { %>
+                                            <blockquote class="quote_green">
+                                                <p>
+                                                    <%- successMessage %>
+                                                </p>
+                                            </blockquote>
+                                            <% } %>
                                         <div class="widget_wrap">
                                             <div class="widget_top">
                                                 <span class="h_icon blocks_images"></span>
